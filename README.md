@@ -386,6 +386,7 @@ I didn't automate the duplicate-submit case because it's harder to be determinis
 - Only way I control state is by using a test user that I know already does not have any appointments booked
 - Expected disabled test case is mostly a poc as checking every use case where complete must remain disabled is very involved. Is dob and gender present or not for example, how many appts does the location need and is the button still disabled when only some times are chosen but not all, etc
 - Don't have entire list of addons and where they are available
+- Excessive regex, made some text selectors broad but would naturally add data-testids in the future
 
 ### Scalability and what I'd implement next
 
@@ -407,7 +408,7 @@ npx playwright test               # headless; targets staging by default (see be
 
 No `.env` is required for the default run: login lives in `[fixtures/testData.ts](fixtures/testData.ts)`, and `[playwright.config.ts](playwright.config.ts)` resolves `baseURL` from `process.env.BASE_URL` or, if unset, from `TEST_ENV` → URL (default `staging` → `https://myezra-staging.ezra.com`).
 
-**Optional `.env`:** copy `[.env.example](.env.example)` to `.env` to override `**BASE_URL`** (full origin under test), `**TEST_ENV**` (only used when `BASE_URL` is unset), or `**APPT1_TIMES**` (scheduling — see [Configurable test data](#configurable-test-data)). The `.env` file is gitignored so local overrides are not committed.
+**Optional `.env`:** copy `[.env.example](.env.example)` to `.env` to override `**BASE_URL`** (full origin under test), `**TEST_ENV`** (only used when `BASE_URL` is unset), or `**APPT1_TIMES**` (scheduling — see [Configurable test data](#configurable-test-data)). The `.env` file is gitignored so local overrides are not committed.
 
 ### Choosing an environment
 
