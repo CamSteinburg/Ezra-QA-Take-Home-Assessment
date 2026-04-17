@@ -1,0 +1,22 @@
+{
+  "name": "ezra-qa-takehome",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:list": "playwright test --list",
+    "test:local": "cross-env TEST_ENV=local playwright test",
+    "test:dev": "cross-env TEST_ENV=dev playwright test",
+    "test:qa": "cross-env TEST_ENV=qa playwright test",
+    "test:staging": "cross-env TEST_ENV=staging playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^25.6.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "typescript": "^5.9.2"
+  }
+}
